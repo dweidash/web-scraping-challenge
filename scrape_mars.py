@@ -140,6 +140,7 @@ def scrape():
         soup = BeautifulSoup(response.text, "html.parser")
         title = soup.find('h2', class_='title').text.split("Enhanced")[0]
         img_url = soup.find_all('li')[1].a['href']
+        img_url = img_url+"/full.jpg"
         hemisphere_image_urls.append({"title":title,"img_url":img_url})
 
     # EXPORT
